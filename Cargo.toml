@@ -1,0 +1,18 @@
+[package]
+name = "udp_price_relay"  # Ensure this matches the actual crate name
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = "0.4.39"
+
+[lib]  # <-- Add this if missing!
+name = "udp_price_relay"
+path = "src/lib.rs"
+
+[[test]]
+name = "client_server_test"
+path = "tests/client_server_test.rs"
